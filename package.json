@@ -1,0 +1,13 @@
+{
+  "name": "tota_udd",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.38.1",
+    "vite": "^2.4.4"
+  }
+}
