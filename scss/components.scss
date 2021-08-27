@@ -1,0 +1,19 @@
+.wrapper{
+    .start_game{
+        width: 10%;
+        height: 5%;
+        border: none;
+        color: #fff;
+        font-size: 1.8rem;
+        background: var(--color-primary);
+        border-radius: 3px;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+    .start_game:hover{
+        background: var(--color-primary-dark);
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+}

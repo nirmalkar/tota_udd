@@ -1,0 +1,18 @@
+body {
+  transition: all 0.1s ease;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  .game-screen {
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    background-color: #f1f1f1;
+  }
+}
