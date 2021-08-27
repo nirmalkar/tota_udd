@@ -1,4 +1,5 @@
 import "../scss/main.scss";
+import { game } from "./constant/gameObj"
 
 const backgroundImagesArr = [
     "bg1",
@@ -27,15 +28,18 @@ function selectRandomIdx(start) {
     if(start){
         randomIdxInterval = setInterval(() => {
             let randomInt = parseInt(Math.random() * backgroundImagesArr.length);
-        document.body.style.backgroundImage = `url(${new URL(`../assets/${backgroundImagesArr[randomInt]}.svg`, import.meta.url)
+            
+            document.body.style.backgroundImage = `url(${new URL(`../assets/bg/${backgroundImagesArr[randomInt]}.svg`, import.meta.url)
                 .href
             })`;
+            console.log(game[gameCurrentIdx]);
         }, 700);
     }else{
         clearInterval(randomIdxInterval);
     }
 }
 selectRandomIdx(start)
+
 
 document.getElementById("start_game").addEventListener("click", () => {
     if(start){
