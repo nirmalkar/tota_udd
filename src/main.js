@@ -39,11 +39,15 @@ function selectRandomIdx(start) {
     if (start) {
         randomIdxInterval = setInterval(() => {
             let randomInt = parseInt(Math.random() * backgroundImagesArr.length);
-            document.body.style.backgroundImage = `url(${new URL(
-                `../assets/bg/${backgroundImagesArr[randomInt]}.svg`,
-                import.meta.url
-            ).href
+            let currInt;
+            if(randomInt !== currInt){
+                document.body.style.backgroundImage = `url(${new URL(
+                    `../assets/bg/${backgroundImagesArr[randomInt]}.svg`,
+                    import.meta.url
+                ).href
                 })`;
+                currInt = randomInt
+            }
         }, 500);
     } else {
         clearInterval(randomIdxInterval);
