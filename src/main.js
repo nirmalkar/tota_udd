@@ -31,6 +31,8 @@ const gameScreen = document.querySelector(".game_screen");
 const startButton = document.getElementById("start_game");
 const cloud = document.querySelector("#cloud")
 const uddButton = document.createElement("button");
+const NotUddButton = document.createElement("button");
+const gameObjName = document.createElement("p")
 
 function selectRandomIdx(start) {
     if (start) {
@@ -47,14 +49,17 @@ function selectRandomIdx(start) {
     }
 }
 
+//insert after function
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
 function startGame(start) {
     let count = 0
     addGameImg(count)
     if (start) {
         randomShowInterval = setInterval(() => {
             count += 1
-            // let gameCurrentIdx = parseInt(Math.random() * game.length);
-            // document.querySelector("#game_img_div").appendChild(gameImg[gameCurrentIdx]?.image_url)
             addGameImg(count)
             cloud.style.background = "#fff"
             
@@ -71,6 +76,7 @@ function startGame(start) {
 selectRandomIdx(true);
 
 function addGameImg(count) {
+    gameObjName.classList.remove("hidden")
     console.log(count);
     if (count === 0) {
         const gameImg = document.createElement("img")
@@ -81,6 +87,9 @@ function addGameImg(count) {
         gameImgDiv.appendChild(gameImg)
         game_img_div.style.transform = "translateX(200%)"
         cloud.classList.remove("hidden")
+        gameObjName.classList.add("obj_name_text")
+        gameObjName.textContent = game[intGameIdx].name  
+        insertAfter(cloud, gameObjName)      
     } else {
         console.log("else");
         console.log(cloud.classList);
@@ -88,6 +97,7 @@ function addGameImg(count) {
         intGameIdx = parseInt(Math.random() * game.length);
         document.querySelector("#game_img").src = game[intGameIdx].image_url
         game_img_div.style.transform = "translateX(200%)"
+        gameObjName.textContent = game[intGameIdx].name
     }
 }
 
@@ -97,6 +107,7 @@ function removeGameImage() {
     currentGameImg.src = ""
     console.log(cloud.classList);
     game_img_div.style.transform = "translateX(0%)"
+    gameObjName.classList.add("hidden")
 }
 
 
@@ -108,14 +119,24 @@ startButton.addEventListener("click", () => {
     uddButton.style.padding = "20px";
     uddButton.style.borderRadius = "50px";
     uddButton.setAttribute("id", "udd_button");
-    function insertAfter(referenceNode, newNode) {
-        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-    }
+    NotUddButton.innerHTML = "NAHI UDDTA!";
+    NotUddButton.classList.add("not_udd_button");
+    NotUddButton.style.width = "auto";
+    NotUddButton.style.padding = "20px";
+    NotUddButton.style.borderRadius = "50px";
+    NotUddButton.setAttribute("id", "not_udd_button");
     insertAfter(gameScreen, uddButton);
+    insertAfter(gameScreen, NotUddButton);
     startGame(!start);
     document.getElementById("udd_button")?.addEventListener("click", () => {
-        console.log(game[intGameIdx].can_fly);
         if (game[intGameIdx].can_fly === true) {
+            cloud.style.background = "#9FE6A0";
+        }else{
+            cloud.style.background = "#F55C47";
+        }
+    })
+    document.getElementById("not_udd_button")?.addEventListener("click", () => {
+        if (game[intGameIdx].can_fly === false) {
             cloud.style.background = "#9FE6A0";
         }else{
             cloud.style.background = "#F55C47";
