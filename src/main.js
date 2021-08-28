@@ -44,7 +44,7 @@ function selectRandomIdx(start) {
                 import.meta.url
             ).href
                 })`;
-        }, 700);
+        }, 500);
     } else {
         clearInterval(randomIdxInterval);
     }
