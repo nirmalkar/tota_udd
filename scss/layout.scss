@@ -5,7 +5,7 @@ body {
 .wrapper {
   position: relative;
   height: 100vh;
-  .game-screen {
+  .game_screen {
     height: 50%;
     width: 50%;
     position: absolute;
@@ -14,5 +14,13 @@ body {
     transform: translate(-50%, -50%);
     z-index: 99;
     background-color: #f1f1f1;
+    .game_img_div{
+      position: absolute;
+      top: 30%;
+      transition: transform 2s ease-in-out;
+    }
+    .game_img_rtl{
+      width: 15rem;
+    }
   }
 }
