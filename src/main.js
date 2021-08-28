@@ -33,6 +33,7 @@ const cloud = document.querySelector("#cloud")
 const uddButton = document.createElement("button");
 const NotUddButton = document.createElement("button");
 const gameObjName = document.createElement("p")
+const startGameTxt = document.getElementById("start_game_txt")
 
 function selectRandomIdx(start) {
     if (start) {
@@ -78,7 +79,6 @@ selectRandomIdx(true);
 function addGameImg(count) {
     gameObjName.classList.remove("hidden")
     gameObjName.style.color = ""
-    console.log(count);
     if (count === 0) {
         const gameImg = document.createElement("img")
         gameImg.id = "game_img"
@@ -92,8 +92,6 @@ function addGameImg(count) {
         gameObjName.textContent = game[intGameIdx].name  
         insertAfter(cloud, gameObjName)      
     } else {
-        console.log("else");
-        console.log(cloud.classList);
         cloud.classList.remove("hidden")
         intGameIdx = parseInt(Math.random() * game.length);
         document.querySelector("#game_img").src = game[intGameIdx].image_url
@@ -113,6 +111,7 @@ function removeGameImage() {
 
 
 startButton.addEventListener("click", () => {
+    startGameTxt.classList.add("hidden")
     startButton.classList.add("hidden");
     uddButton.innerHTML = "UDD!";
     uddButton.classList.add("start_game_button");
