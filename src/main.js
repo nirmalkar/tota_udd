@@ -1,5 +1,5 @@
 import "../scss/main.scss";
-import { game } from "./constant/gameObj";
+import { game } from "./constants/gameObj";
 
 const backgroundImagesArr = [
     "bg1",
@@ -67,12 +67,13 @@ function addGameImg(count){
     if(count === 0){
         const gameImg = document.createElement("img")
         gameImg.id = "game_img"
+        gameImg.classList.add("game_img_rtl")
         gameImg.setAttribute("src",`${game[intGameIdx].image_url}`)
         let gameImgDiv = document.querySelector("#game_img_div")
         gameImgDiv.appendChild(gameImg)
-        game_img_div.style.height = "100%"
-        game_img_div.style.width = "100%"
-        game_img_div.style.transform = "translateX(90%)"
+        // game_img_div.style.height = "100%"
+        // game_img_div.style.width = "100%"
+        game_img_div.style.transform = "translateX(150%)"
 
     }else{
         document.querySelector("#game_img").src = game[intGameIdx].image_url

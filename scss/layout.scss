@@ -20,7 +20,10 @@ body {
       transition: transform 2s ease-in-out;
     }
     .game_img_rtl{
-      width: 15rem;
+      position: absolute;
+      top: 15%;
+      left: 35%;
+      width: 12rem;
     }
   }
 }
