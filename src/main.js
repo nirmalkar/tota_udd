@@ -23,7 +23,8 @@ const backgroundImagesArr = [
 
 let start = false;
 let randomIdxInterval;
-let randomGameIdxInterval;
+let randomShowInterval;
+let randomHideInterval;
 let intGameIdx = parseInt(Math.random() * game.length);
 
 const gameScreen = document.querySelector(".game_screen");
@@ -50,21 +51,27 @@ function startGame(start) {
     let count = 0
     addGameImg(count)
     if (start) {
-        randomGameIdxInterval = setInterval(() => {
-            count++
+        randomShowInterval = setInterval(() => {
+            count += 1
             // let gameCurrentIdx = parseInt(Math.random() * game.length);
             // document.querySelector("#game_img_div").appendChild(gameImg[gameCurrentIdx]?.image_url)
+            addGameImg(count)
+            cloud.style.background = "#fff"
+            
+        }, 3001);
+        randomHideInterval = setInterval(() => {
             removeGameImage()
-            console.log(count);
-        }, 2000);
+            game_img_div.transform = "none"
+        }, 1500);
     } else {
-        clearInterval(randomGameIdxInterval);
+        clearInterval(randomShowInterval);
     }
 }
 
 selectRandomIdx(true);
 
 function addGameImg(count) {
+    console.log(count);
     if (count === 0) {
         const gameImg = document.createElement("img")
         gameImg.id = "game_img"
@@ -75,7 +82,12 @@ function addGameImg(count) {
         game_img_div.style.transform = "translateX(200%)"
         cloud.classList.remove("hidden")
     } else {
+        console.log("else");
+        console.log(cloud.classList);
+        cloud.classList.remove("hidden")
+        intGameIdx = parseInt(Math.random() * game.length);
         document.querySelector("#game_img").src = game[intGameIdx].image_url
+        game_img_div.style.transform = "translateX(200%)"
     }
 }
 
@@ -83,6 +95,8 @@ function removeGameImage() {
     let currentGameImg = document.getElementById("game_img")
     cloud.classList.add("hidden")
     currentGameImg.src = ""
+    console.log(cloud.classList);
+    game_img_div.style.transform = "translateX(0%)"
 }
 
 
