@@ -6,12 +6,12 @@ export const game = [
   },
   {
     name: "bus",
-    can_fly: true,
+    can_fly: false,
     image_url: new URL(`../../assets/gameImage/bus.png`, import.meta.url).href,
   },
   {
     name: "car",
-    can_fly: true,
+    can_fly: false,
     image_url: new URL(`../../assets/gameImage/car.png`, import.meta.url).href,
   },
   {

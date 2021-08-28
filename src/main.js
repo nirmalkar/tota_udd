@@ -28,6 +28,8 @@ let intGameIdx = parseInt(Math.random() * game.length);
 
 const gameScreen = document.querySelector(".game_screen");
 const startButton = document.getElementById("start_game");
+const cloud = document.querySelector("#cloud")
+const uddButton = document.createElement("button");
 
 function selectRandomIdx(start) {
     if (start) {
@@ -45,7 +47,6 @@ function selectRandomIdx(start) {
 }
 
 function startGame(start) {
-    console.log(start);
     let count = 0
     addGameImg(count)
     if (start) {
@@ -63,32 +64,30 @@ function startGame(start) {
 
 selectRandomIdx(true);
 
-function addGameImg(count){
-    if(count === 0){
+function addGameImg(count) {
+    if (count === 0) {
         const gameImg = document.createElement("img")
         gameImg.id = "game_img"
         gameImg.classList.add("game_img_rtl")
-        gameImg.setAttribute("src",`${game[intGameIdx].image_url}`)
+        gameImg.setAttribute("src", `${game[intGameIdx].image_url}`)
         let gameImgDiv = document.querySelector("#game_img_div")
         gameImgDiv.appendChild(gameImg)
-        // game_img_div.style.height = "100%"
-        // game_img_div.style.width = "100%"
-        game_img_div.style.transform = "translateX(150%)"
-
-    }else{
+        game_img_div.style.transform = "translateX(200%)"
+        cloud.classList.remove("hidden")
+    } else {
         document.querySelector("#game_img").src = game[intGameIdx].image_url
     }
 }
 
-function removeGameImage(){
+function removeGameImage() {
     let currentGameImg = document.getElementById("game_img")
+    cloud.classList.add("hidden")
     currentGameImg.src = ""
 }
 
 
 startButton.addEventListener("click", () => {
     startButton.classList.add("hidden");
-    const uddButton = document.createElement("button");
     uddButton.innerHTML = "UDD!";
     uddButton.classList.add("start_game_button");
     uddButton.style.width = "auto";
@@ -100,4 +99,14 @@ startButton.addEventListener("click", () => {
     }
     insertAfter(gameScreen, uddButton);
     startGame(!start);
+    document.getElementById("udd_button")?.addEventListener("click", () => {
+        console.log(game[intGameIdx].can_fly);
+        if (game[intGameIdx].can_fly === true) {
+            cloud.style.background = "#9FE6A0";
+        }else{
+            cloud.style.background = "#F55C47";
+        }
+    })
 });
+console.log(document.getElementById("udd_button"));
+
