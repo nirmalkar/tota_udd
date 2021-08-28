@@ -77,6 +77,7 @@ selectRandomIdx(true);
 
 function addGameImg(count) {
     gameObjName.classList.remove("hidden")
+    gameObjName.style.color = ""
     console.log(count);
     if (count === 0) {
         const gameImg = document.createElement("img")
@@ -115,14 +116,16 @@ startButton.addEventListener("click", () => {
     startButton.classList.add("hidden");
     uddButton.innerHTML = "UDD!";
     uddButton.classList.add("start_game_button");
+    uddButton.style.left =  "46%";
     uddButton.style.width = "auto";
-    uddButton.style.padding = "20px";
+    uddButton.style.padding = "16px 20px 20px 20px";
+    uddButton.style.marginRight = "30px";
     uddButton.style.borderRadius = "50px";
     uddButton.setAttribute("id", "udd_button");
     NotUddButton.innerHTML = "NAHI UDDTA!";
     NotUddButton.classList.add("not_udd_button");
     NotUddButton.style.width = "auto";
-    NotUddButton.style.padding = "20px";
+    NotUddButton.style.padding = "16px 20px 20px 20px";
     NotUddButton.style.borderRadius = "50px";
     NotUddButton.setAttribute("id", "not_udd_button");
     insertAfter(gameScreen, uddButton);
@@ -131,15 +134,19 @@ startButton.addEventListener("click", () => {
     document.getElementById("udd_button")?.addEventListener("click", () => {
         if (game[intGameIdx].can_fly === true) {
             cloud.style.background = "#9FE6A0";
+            gameObjName.style.color = "#fff"
         }else{
             cloud.style.background = "#F55C47";
+            gameObjName.style.color = "#fff"
         }
     })
     document.getElementById("not_udd_button")?.addEventListener("click", () => {
         if (game[intGameIdx].can_fly === false) {
             cloud.style.background = "#9FE6A0";
+            gameObjName.style.color = "#fff"
         }else{
             cloud.style.background = "#F55C47";
+            gameObjName.style.color = "#fff"
         }
     })
 });
