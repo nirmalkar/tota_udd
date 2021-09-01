@@ -119,17 +119,21 @@ startButton.addEventListener("click", () => {
     startButton.classList.add("hidden");
     uddButton.innerHTML = "UDD!";
     uddButton.classList.add("start_game_button");
-    uddButton.style.left =  "46%";
-    uddButton.style.width = "auto";
-    uddButton.style.padding = "16px 20px 20px 20px";
-    uddButton.style.marginRight = "30px";
-    uddButton.style.borderRadius = "50px";
+    console.log(uddButton.style);
+    Object.assign(uddButton.style, {
+    left: "46%",
+    width: "auto",
+    padding: "16px 20px 20px 20px",
+    marginRight: "30px",
+    borderRadius: "50px"});
     uddButton.setAttribute("id", "udd_button");
     NotUddButton.innerHTML = "NAHI UDDTA!";
     NotUddButton.classList.add("not_udd_button");
-    NotUddButton.style.width = "auto";
-    NotUddButton.style.padding = "16px 20px 20px 20px";
-    NotUddButton.style.borderRadius = "50px";
+    Object.assign(NotUddButton.style, {
+        width: "auto",
+        padding: "16px 20px 20px 20px",
+        borderRadius: "50px"
+    })
     NotUddButton.setAttribute("id", "not_udd_button");
     insertAfter(gameScreen, uddButton);
     insertAfter(gameScreen, NotUddButton);
