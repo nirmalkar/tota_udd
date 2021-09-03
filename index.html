@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <title>Tota udd</title>
-  </head>
-  <body>
-    <div id="app">
-      <div class="wrapper">
-        <!-- <div class="cloud"></div> -->
-        <div class="game_screen">
-          <p id="start_game_txt" class="start_game_txt">Start Game</p>
-          <div id="game_img_div" class="game_img_div">
-            <div id="cloud" class="cloud hidden"></div>
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <title>Tota udd</title>
+    </head>
+    <body>
+        <div id="app">
+            <div class="wrapper">
+                <div class="game_screen">
+                    <p id="start_game_txt" class="start_game_txt">Start Game</p>
+                    <div id="game_img_div" class="game_img_div">
+                        <div id="cloud" class="cloud hidden"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="modal" class="modal">
+                <div id="modal_content" class="modal_content">
+                    <span id="close" class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+            </div>
         </div>
-        <button class="start_game_button" id="start_game">Start Game</button>
-      </div>
-    </div>
-    <script type="module" src="./src/main.js"></script>
-  </body>
+        <script type="module" src="./src/main.js"></script>
+    </body>
 </html>

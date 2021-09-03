@@ -12,20 +12,19 @@ body {
     top: 34%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 99;
     background-color: #f1f1f1;
-    .game_img_div{
+    .game_img_div {
       position: absolute;
       top: 30%;
       transition: transform 2s ease-in-out;
     }
-    .game_img_rtl{
+    .game_img_rtl {
       position: absolute;
       top: 15%;
       left: 35%;
       width: 12rem;
     }
-    .start_game_txt{
+    .start_game_txt {
       position: absolute;
       top: 50%;
       left: 50%;

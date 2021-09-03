@@ -1,65 +1,45 @@
-.wrapper {
-  .start_game_button {
-    width: 15%;
-    height: 5%;
-    border: none;
-    color: #fff;
-    font-size: 1.8rem;
-    cursor: pointer;
-    background: var(--color-primary);
-    border-radius: 3px;
-    position: absolute;
-    top: 64%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .start_game_button:hover {
-    background: var(--color-primary-dark);
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  }
-.not_udd_button{
-    @extend .start_game_button;
-    left: 54%;
-}
+@import './components/button.scss';
+@import './components/modal.scss';
 
-  .hidden {
-    display: none;
-  }
-  .cloud {
-    margin-top: 70px;
-    width: 350px;
-    height: 120px;
-    background: #fff;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 100px;
-  }
-  .cloud::after,
-  .cloud::before {
-    content: "";
-    position: relative;
-    display: inline-block;
-    background: inherit;
-    border-radius: inherit;
-  }
-  .cloud::after {
-    width: 100px;
-    height: 100px;
-    top: -120px;
-    left: -120px;
-  }
-  .cloud::before {
-    width: 180px;
-    height: 180px;
-    top: -70px;
-    left: 130px;
-  }
-  .obj_name_text{
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    text-transform: uppercase;
-    font-size: 2rem;
-    text-decoration: underline;
-    transform: translate(-50%, -50%);
-  }
+.wrapper {
+    .hidden {
+        display: none;
+    }
+    .cloud {
+        margin-top: 70px;
+        width: 350px;
+        height: 120px;
+        background: #fff;
+        box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 100px;
+    }
+    .cloud::after,
+    .cloud::before {
+        content: '';
+        position: relative;
+        display: inline-block;
+        background: inherit;
+        border-radius: inherit;
+    }
+    .cloud::after {
+        width: 100px;
+        height: 100px;
+        top: -120px;
+        left: -120px;
+    }
+    .cloud::before {
+        width: 180px;
+        height: 180px;
+        top: -70px;
+        left: 130px;
+    }
+    .obj_name_text {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        text-transform: uppercase;
+        font-size: 2rem;
+        text-decoration: underline;
+        transform: translate(-50%, -50%);
+    }
 }

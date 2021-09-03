@@ -1,0 +1,21 @@
+.button {
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 16px 20px 15px 15px;
+    position: absolute;
+    line-height: 1.5;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+.button:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    @extend .button;
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
