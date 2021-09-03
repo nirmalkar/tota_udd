@@ -37,5 +37,6 @@ export const Button = (buttonProps) => {
             referenceNode.nextSibling
         )
     }
+
     insertAfter(referenceNode, button)
 }

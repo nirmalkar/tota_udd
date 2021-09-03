@@ -2,6 +2,7 @@ import '../scss/main.scss'
 import { game } from './constants/gameObj'
 import { Modal } from './components/Modal'
 import { Button } from './components/Button'
+import { GameScreen } from './components/GameScreen'
 
 const backgroundImagesArr = [
     'bg1',
@@ -29,13 +30,14 @@ let randomShowInterval
 let randomHideInterval
 let intGameIdx = parseInt(Math.random() * game.length)
 
-const gameScreen = document.querySelector('.game_screen')
-const startButton = document.getElementById('start_game')
-const cloud = document.querySelector('#cloud')
-const uddButton = document.createElement('button')
-const NotUddButton = document.createElement('button')
+const wrapper = document.createElement('div')
+const gameScreen = GameScreen()
 const gameObjName = document.createElement('p')
-const startGameTxt = document.getElementById('start_game_txt')
+const app = document.querySelector('#app')
+
+wrapper.classList.add('wrapper')
+app.append(wrapper)
+document.querySelector('.wrapper').append(gameScreen)
 
 function selectRandomIdx(start) {
     if (start) {
@@ -65,7 +67,9 @@ function insertAfter(referenceNode, newNode) {
 }
 
 function startGame(start) {
+    const cloud = document.querySelector('#cloud')
     let count = 0
+
     addGameImg(count)
     if (start) {
         randomShowInterval = setInterval(() => {
@@ -85,6 +89,7 @@ function startGame(start) {
 selectRandomIdx(true)
 
 function addGameImg(count) {
+    const cloud = document.querySelector('#cloud')
     gameObjName.classList.remove('hidden')
     gameObjName.style.color = ''
     if (count === 0) {
@@ -109,10 +114,11 @@ function addGameImg(count) {
 }
 
 function removeGameImage() {
+    const cloud = document.querySelector('#cloud')
     const currentGameImg = document.getElementById('game_img')
+
     cloud.classList.add('hidden')
     currentGameImg.src = ''
-    console.log(cloud.classList)
     game_img_div.style.transform = 'translateX(0%)'
     gameObjName.classList.add('hidden')
 }
@@ -134,6 +140,7 @@ Button({
 })
 
 function Start(ele) {
+    const startGameTxt = document.querySelector('#start_game_txt')
     startGameTxt.classList.add('hidden')
     ele.style.display = 'none'
     Button({
@@ -175,6 +182,8 @@ function Start(ele) {
 }
 
 function uddFunc() {
+    const cloud = document.querySelector('#cloud')
+
     if (game[intGameIdx].can_fly === true) {
         cloud.style.background = '#9FE6A0'
         gameObjName.style.color = '#fff'
@@ -183,7 +192,10 @@ function uddFunc() {
         gameObjName.style.color = '#fff'
     }
 }
+
 function notUddFunc() {
+    const cloud = document.querySelector('#cloud')
+
     if (game[intGameIdx].can_fly === false) {
         cloud.style.background = '#9FE6A0'
         gameObjName.style.color = '#fff'
