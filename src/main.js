@@ -1,4 +1,4 @@
-import '../scss/main.scss'
+import './scss/main.scss'
 import { game } from './constants/gameObj'
 import { Modal } from './components/Modal'
 import { Button } from './components/Button'
@@ -49,7 +49,7 @@ function selectRandomIdx(start) {
             if (randomInt !== currInt) {
                 document.body.style.backgroundImage = `url(${
                     new URL(
-                        `../assets/bg/${backgroundImagesArr[randomInt]}.svg`,
+                        `./assets/bg/${backgroundImagesArr[randomInt]}.svg`,
                         import.meta.url
                     ).href
                 })`
