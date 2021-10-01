@@ -1,7 +1,7 @@
 import './scss/main.scss'
 import { game } from './constants/gameObj'
-import { Modal } from './components/Modal'
-import { Button } from './components/Button'
+import { Modal } from './components/designSystem/Modal'
+import { Button } from './components/designSystem/Button'
 import { GameScreen } from './components/GameScreen'
 
 const backgroundImagesArr = [
