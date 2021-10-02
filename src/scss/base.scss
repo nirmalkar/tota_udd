@@ -2,8 +2,11 @@
     --color-primary: #7c83fd;
     --color-primary-dark: #6e75fa;
     --color-secondary: #96baff;
+    --color-secondary-dark: #538cf7;
     --color-tertiary: #7dedff;
+    --color-tertiary-dark: #46dff7;
     --color-quaternary: #88fff7;
+    --color-quaternary-dark: #45fdf1;
 
     --color-success: #9fe6a0;
     --color-danger: #f55c47;
@@ -14,8 +17,9 @@
     --color-grey-light-4: #ccc;
 
     --color-grey-dark-1: #333;
-    --color-grey-dark-2: #777;
-    --color-grey-dark-3: #999;
+    --color-grey-dark-2: rgb(85, 84, 84);
+    --color-grey-dark-3: rgb(119, 118, 118);
+    --color-grey-dark-4: rgb(141, 140, 140);
 
     --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }

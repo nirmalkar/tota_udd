@@ -21,7 +21,7 @@ export const Button = (buttonProps) => {
 
     button.addEventListener('click', (e) => {
         e.preventDefault()
-        onClickFunc(button)
+        onClickFunc(button, e)
     })
 
     button.setAttribute('id', id)

@@ -9,13 +9,79 @@
     text-decoration: none;
     border-radius: 0.5rem;
 }
-.button:hover {
-    background: var(--color-primary-dark);
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
 
 .btn-primary {
     @extend .button;
     background: var(--color-primary);
     border-color: var(--color-primary);
+}
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    @extend .button;
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary-dark);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-tertiary {
+    @extend .button;
+    background: var(--color-tertiary);
+    border-color: var(--color-tertiary);
+}
+
+.btn-tertiary:hover {
+    background: var(--color-tertiary-dark);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-quaternary {
+    @extend .button;
+    background: var(--color-quaternary);
+    border-color: var(--color-quaternary);
+}
+
+.btn-quaternary:hover {
+    background: var(--color-quaternary-dark);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-dark{
+    @extend .button;
+    background: var(--color-grey-dark-3);
+    border-color: var(--color-grey-dark-3);
+}
+
+.btn-dark:hover {
+    background: var(--color-grey-dark-4);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-darker{
+    @extend .button;
+    background: var(--color-grey-dark-2);
+    border-color: var(--color-grey-dark-2);
+}
+
+.btn-darker:hover {
+    background: var(--color-grey-dark-3);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-darkest{
+    @extend .button;
+    background: var(--color-grey-dark-1);
+    border-color: var(--color-grey-dark-1);
+}
+
+.btn-darkest:hover {
+    background: var(--color-grey-dark-2);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
