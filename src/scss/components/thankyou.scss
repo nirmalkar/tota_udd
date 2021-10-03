@@ -1,0 +1,12 @@
+.thankyou-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .thankyou {
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: var(--color-grey-dark-2);
+        text-align: center;
+    }
+}

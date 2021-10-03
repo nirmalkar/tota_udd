@@ -32,7 +32,7 @@ export const Button = (buttonProps) => {
 
     // insert after function
     function insertAfter(referenceNode, newNode) {
-        referenceNode.parentNode.insertBefore(
+        referenceNode.parentNode?.insertBefore(
             newNode,
             referenceNode.nextSibling
         )

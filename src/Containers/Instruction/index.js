@@ -22,7 +22,8 @@ function instruction (){
         })(history.pushState);
         console.log();
         if(route === "multi"){
-            window.history.pushState('this is game page', 'Game', '/game');
+            // window.history.pushState('this is game page', 'Game', '/game');
+            window.location.href = "/game"
             
         }else{
             // window.location = "/game"
@@ -67,8 +68,7 @@ function instruction (){
 }
 
 const Instruction = () => {
-
-    return instruction
+return instruction
 }
 
 export default Instruction
